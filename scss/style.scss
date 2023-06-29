@@ -1,0 +1,302 @@
+// Estilos generales
+body {
+  background: #45858c; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #a0d9d9, #d9c589, #bf9765);
+  background: linear-gradient(to right, #add4d9, #c1d96c, #f2c36b);
+}
+
+a {
+  text-decoration: none;
+  font-size: 17px;
+}
+
+p {
+  font-size: 17px;
+}
+
+a:hover {
+  color: #eca539 !important;
+}
+
+/* Estilos para Servicio.html */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+}
+
+.titulo {
+  font-size: 24px;
+  padding: 20px 0;
+}
+
+.contenedor-servicios {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  row-gap: 20px;
+}
+
+.card {
+  border-radius: 10px;
+  min-height: 200px;
+  font-weight: bold;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+.banner {
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.banner ul {
+  list-style: none;
+}
+
+.banner ul li {
+  margin: 15px;
+  font-weight: bold;
+}
+
+.banner .boton {
+  background: #ffd600;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px;
+  border: none;
+  border-radius: 100px;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+}
+
+.card-flip {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  margin: 25px;
+}
+
+.card-flip .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.card-flip .front {
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 0 5px 10px #f1aa40;
+}
+
+.card-flip .front img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-flip .front h3 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.card-flip .back {
+  transform: perspective(600px) rotateY(180deg);
+  background: rgb(3, 35, 54);
+  padding: 15px;
+  color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 5px 10px #000;
+}
+
+.card-flip .back h3 {
+  font-size: 30px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.card-flip .back p {
+  letter-spacing: 1px;
+}
+
+.card-flip:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.card-flip:hover .back {
+  transform: perspective(600px) rotateY(360deg);
+}
+
+img {
+  width: 100%;
+}
+
+.convenio {
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.convenio h2 {
+  text-align: center;
+  font-size: 38px;
+  margin: 15px 0px 40px;
+}
+
+.convenio-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.convenio-item {
+  width: 30%;
+  position: relative;
+  overflow: hidden;
+  margin: 15px;
+}
+
+.convenio-img {
+  transition: all 0.5s;
+}
+
+.convenio-text {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  transform: translateY(100%);
+  transition: all 0.5s ease-out;
+}
+
+.convenio-text p {
+  text-align: justify;
+}
+
+.convenio-item:hover .convenio-text {
+  transform: translateY(0%);
+}
+
+.convenio-item:hover .convenio-img {
+  transform: scale(1.15);
+}
+
+form {
+  padding: 50px 55px;
+  background: #2b73a3;
+  box-shadow: 0 0 20px rgba(236, 165, 57, 0.5);
+  border-radius: 20px;
+  text-align: center;
+  width: 340px;
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    label {
+      color: #0d0d0e;
+      font-size: 15px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    input textarea {
+      padding: 17px 25px;
+      border-radius: 25px;
+      margin-bottom: 20px;
+      background-color: #2dd127;
+      border: 2px solid #62e62f;
+      color: #f1dacd;
+      outline: none;
+
+      &::placeholder {
+        color: #b5cab6;
+      }
+    }
+  }
+
+  .form-text {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+
+    a {
+      color: #76b28e;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(9, 74, 136);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    padding: 20px;
+  }
+
+  form {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .contenedor-servicios {
+    grid-template-columns: 1fr;
+  }
+
+  .card-flip {
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+}

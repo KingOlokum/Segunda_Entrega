@@ -8,23 +8,20 @@ a {
   text-decoration: none;
   font-size: 17px;
 }
+
 p {
   font-size: 17px;
 }
+
 a:hover {
-  color: rgb(236, 165, 57) !important;
+  color: #eca539 !important;
 }
-/*Estilos Servicio.html*/
+
+/* Estilos para Servicio.html */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-body {
-  background: #1d202b;
-  color: #fff;
-  font-family: "Roboto", sans-serif;
 }
 
 .contenedor {
@@ -57,10 +54,6 @@ body {
   overflow: hidden;
   background-size: cover;
   background-position: center center;
-}
-
-.card {
-  height: 50%;
   display: grid;
   grid-template-rows: 1fr auto;
 }
@@ -96,15 +89,204 @@ body {
   cursor: pointer;
 }
 
+.card-flip {
+  position: relative;
+  width: 300px;
+  height: 350px;
+  margin: 25px;
+}
+
+.card-flip .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.card-flip .front {
+  transform: perspective(600px) rotateY(0deg);
+  box-shadow: 0 5px 10px #f1aa40;
+}
+
+.card-flip .front img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-flip .front h3 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.card-flip .back {
+  transform: perspective(600px) rotateY(180deg);
+  background: rgb(3, 35, 54);
+  padding: 15px;
+  color: #f3f3f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 5px 10px #000;
+}
+
+.card-flip .back h3 {
+  font-size: 30px;
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+.card-flip .back p {
+  letter-spacing: 1px;
+}
+
+.card-flip:hover .front {
+  transform: perspective(600px) rotateY(180deg);
+}
+
+.card-flip:hover .back {
+  transform: perspective(600px) rotateY(360deg);
+}
+
+img {
+  width: 100%;
+}
+
+.convenio {
+  width: 90%;
+  max-width: 1400px;
+  margin: auto;
+}
+
+.convenio h2 {
+  text-align: center;
+  font-size: 38px;
+  margin: 15px 0px 40px;
+}
+
+.convenio-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.convenio-item {
+  width: 30%;
+  position: relative;
+  overflow: hidden;
+  margin: 15px;
+}
+
+.convenio-img {
+  transition: all 0.5s;
+}
+
+.convenio-text {
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  transform: translateY(100%);
+  transition: all 0.5s ease-out;
+}
+
+.convenio-text p {
+  text-align: justify;
+}
+
+.convenio-item:hover .convenio-text {
+  transform: translateY(0%);
+}
+
+.convenio-item:hover .convenio-img {
+  transform: scale(1.15);
+}
+
+form {
+  padding: 50px 55px;
+  background: #2b73a3;
+  box-shadow: 0 0 20px rgba(236, 165, 57, 0.5);
+  border-radius: 20px;
+  text-align: center;
+  width: 340px;
+}
+form .input-group {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+form .input-group label {
+  color: #0d0d0e;
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+form .input-group input textarea {
+  padding: 17px 25px;
+  border-radius: 25px;
+  margin-bottom: 20px;
+  background-color: #2dd127;
+  border: 2px solid #62e62f;
+  color: #f1dacd;
+  outline: none;
+}
+form .input-group input textarea::placeholder {
+  color: #b5cab6;
+}
+form .form-text {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+form .form-text a {
+  color: #76b28e;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 900px) {
-  .body {
+  body {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: rgb(9, 74, 136);
+  }
+}
+@media screen and (max-width: 700px) {
+  body {
+    padding: 20px;
+  }
+  form {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .contenedor {
+    grid-template-columns: 1fr;
+  }
+  .contenedor-servicios {
+    grid-template-columns: 1fr;
+  }
+  .card-flip {
+    margin: 10px;
+    width: calc(100% - 20px);
   }
 }
 
-@media screen and (max-width: 700px) {
-}
-
-@media screen and (max-width: 600px) {
-}
+/*# sourceMappingURL=style.css.map */
